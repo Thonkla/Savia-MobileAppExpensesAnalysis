@@ -20,7 +20,6 @@ In the first row, add the following column headers:
 Open the Google Sheet and go to Extensions > Apps Script
 Delete the default code and replace it with the code from AppScript.txt
    ```bash
-   Note:
    "Replace EDIT_HERE1 and EDIT_HERE3 with your Google Spreadsheet ID (found in the sheet's URL)."
    "Replace EDIT_HERE2 and EDIT_HERE4 with your Sheet name (e.g., "Savia")."
    ```
