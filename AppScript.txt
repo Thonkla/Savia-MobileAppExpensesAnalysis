@@ -1,0 +1,44 @@
+// CREATE GOOGLE SHEET AND NAMED IT
+
+function doGet(e) {
+  var sheet = SpreadsheetApp.openById('EDIT_HERE1');
+  var data = sheet.getSheetByName('EDIT_HERE2').getDataRange().getValues();
+  
+  // แปลงข้อมูลเป็น JSON และส่งกลับ
+  var jsonResponse = [];
+  for (var i = 1; i < data.length; i++) {  // เริ่มที่ i = 1 เพื่อข้าม header
+    jsonResponse.push({
+      "Date": data[i][0],
+      "Time": data[i][1],
+      "Amount": data[i][2],
+      "Category": data[i][3],
+      "Type": data[i][4],
+      "Description": data[i][5],
+      "Payment Method": data[i][6],
+      "Note": data[i][7]
+    });
+  }
+  
+  return ContentService.createTextOutput(JSON.stringify(jsonResponse)).setMimeType(ContentService.MimeType.JSON);
+}
+
+function doPost(e) {
+  var sheet = SpreadsheetApp.openById('EDIT_HERE3');
+  var data = JSON.parse(e.postData.contents);
+  var row = [
+    data.Date,
+    data.Time,
+    data.Amount,
+    data.Category,
+    data.Type,
+    data.Description,
+    data['Payment Method'],
+    data.Note
+  ];
+  
+  // เพิ่มข้อมูลลงในแถวใหม่
+  sheet.getSheetByName('EDIT_HERE4').appendRow(row);
+  
+  return ContentService.createTextOutput(JSON.stringify({status: 'success'})).setMimeType(ContentService.MimeType.JSON);
+}
+
