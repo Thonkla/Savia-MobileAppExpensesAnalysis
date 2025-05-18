@@ -37,4 +37,4 @@ Delete the default code and replace it with the code from AppScript.txt
    npx eas build -p android --profile preview
    ```
 
-## Otherwise e.g. missing some library: Ask ChatGPT
+## Otherwise e.g. got an error or missing some library: Ask ChatGPT
