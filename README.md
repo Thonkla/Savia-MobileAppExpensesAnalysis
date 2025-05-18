@@ -17,10 +17,10 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    ```
 
 3. Export
-```
-npx expo login
-npx eas build -p android --profile preview
-```
+   ```bash
+   npx expo login
+   npx eas build -p android --profile preview
+   ```
 
 Otherwise
 e.g. missing some library: Ask ChatGPT
