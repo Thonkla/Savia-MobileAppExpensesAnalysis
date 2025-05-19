@@ -1,14 +1,13 @@
+import { Picker } from "@react-native-picker/picker";
+import { useEffect, useState } from "react";
 import {
-  View,
-  Text,
-  TextInput,
-  Button,
   Alert,
   ScrollView,
+  Text,
+  TextInput,
   TouchableOpacity,
+  View
 } from "react-native";
-import { useState, useEffect } from "react";
-import { Picker } from "@react-native-picker/picker";
 import styles from "./styles/style";
 
 export default function AddExpense() {
@@ -55,7 +54,7 @@ export default function AddExpense() {
 
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbxIEaykBv3dm6UCIcjt2Nd3TkZQmPsaHMfJEesoMA81EXySQwn6vEGw81kOMpzbuNzt6Q/exec",
+        "APP SCRIPT API HERE",
         {
           method: "POST",
           headers: {
